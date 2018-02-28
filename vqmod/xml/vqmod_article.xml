@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+    <id>Rename Model to Article</id>
+    <version>1.0</version>
+    <vqmver>2.X</vqmver>
+    <author>GHopper</author>
+    <file path="admin/language/ru-ru/sale/" name="return.php,order.php">
+        <operation>
+            <search position="replace" regex="true"><![CDATA[
+            ~\$_\[\'column_model\'\].*~
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $_['column_model'] = 'Артикул';
+            ]]></add>
+        </operation>
+    </file>
+    <file name="admin/language/ru-ru/sale/return.php">
+        <operation>
+            <search position="replace" regex="true"><![CDATA[
+            ~\$_\[\'entry_model\'\].*~
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $_['entry_model'] = 'Артикул';
+            ]]></add>
+        </operation>
+        <operation>
+            <search position="replace" regex="true"><![CDATA[
+            ~\$_\[\'error_model\'\].*~
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $_['error_model'] = 'Артикул должен содержать от 1 до 64 символов!';
+            ]]></add>
+        </operation>
+    </file>
+
+    <file path="admin/language/ru-ru/extension/report/" name="product_viewed.php,product_purchased.php">
+        <operation>
+            <search position="replace" regex="true"><![CDATA[
+            ~\$_\[\'column_model\'\].*~
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $_['column_model'] = 'Артикул';
+            ]]></add>
+        </operation>
+    </file>
+
+    <file name="admin/language/ru-ru/catalog/product.php">
+        <operation>
+            <search position="replace" regex="true"><![CDATA[
+            ~\$_\[\'column_model\'\].*~
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $_['column_model'] = 'Артикул';
+            ]]></add>
+        </operation>
+        <operation>
+            <search position="replace" regex="true"><![CDATA[
+            ~\$_\[\'entry_model\'\].*~
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $_['entry_model'] = 'Артикул';
+            ]]></add>
+        </operation>
+        <operation>
+            <search position="replace" regex="true"><![CDATA[
+            ~\$_\[\'error_model\'\].*~
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $_['error_model'] = 'Артикул должен содержать от 1 до 64 символов!';
+            ]]></add>
+        </operation>
+    </file>
+
+    <file path="catalog/language/ru-ru/account/" name="wishlist.php,return.php,order.php">
+        <operation>
+            <search position="replace" regex="true"><![CDATA[
+            ~\$_\[\'column_model\'\].*~
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $_['column_model'] = 'Артикул';
+            ]]></add>
+        </operation>
+    </file>
+    <file name="catalog/language/ru-ru/account/return.php">
+        <operation>
+            <search position="replace" regex="true"><![CDATA[
+            ~\$_\[\'entry_model\'\].*~
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $_['entry_model'] = 'Артикул';
+            ]]></add>
+        </operation>
+    </file>
+
+    <file name="catalog/language/ru-ru/mail/order_add.php">
+        <operation>
+            <search position="replace" regex="true"><![CDATA[
+            ~\$_\[\'text_model\'\].*~
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $_['text_model'] = 'Артикул';
+            ]]></add>
+        </operation>
+    </file>
+
+    <file path="catalog/language/ru-ru/product/" name="product.php,category.php,compare.php,search.php,manufacturer.php,special.php">
+        <operation>
+            <search position="replace" regex="true"><![CDATA[
+            ~\$_\[\'text_model\'\].*~
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $_['text_model'] = 'Артикул';
+            ]]></add>
+        </operation>
+    </file>
+    <file path="catalog/language/ru-ru/product/" name="special.php,category.php,manufacturer.php,search.php">
+        <operation>
+            <search position="replace" regex="true"><![CDATA[
+            ~\$_\[\'text_model_asc\'\].*~
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $_['text_model_asc'] = 'Артикул (А - Я)';
+            ]]></add>
+        </operation>
+        <operation>
+            <search position="replace" regex="true"><![CDATA[
+            ~\$_\[\'text_model_desc\'\].*~
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $_['text_model_desc'] = 'Артикул (Я - А)';
+            ]]></add>
+        </operation>
+   </file>
+
+   <file path="catalog/language/ru-ru/checkout/" name="checkout.php,cart.php">
+        <operation>
+            <search position="replace" regex="true"><![CDATA[
+            ~\$_\[\'column_model\'\].*~
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $_['column_model'] = 'Артикул';
+            ]]></add>
+        </operation>
+   </file>
+</modification>
