@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+    <id>Add manufacturer description dictionary</id>
+    <version>1.0</version>
+    <vqmver>2.X</vqmver>
+    <author>GHopper</author>
+    <file name="admin/language/ru-ru/catalog/manufacturer.php">
+        <operation>
+            <search position="after" regex="false"><![CDATA[
+            entry_name
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $_['entry_description'] = 'Описание';
+            ]]></add>
+        </operation>
+    </file>
+</modification>

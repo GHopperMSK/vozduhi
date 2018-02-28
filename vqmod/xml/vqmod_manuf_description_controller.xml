@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+    <id>Add manufacturer description to the controller</id>
+    <version>1.0</version>
+    <vqmver>2.X</vqmver>
+    <author>GHopper</author>
+    <file name="admin/controller/catalog/manufacturer.php">
+        <operation>
+            <search position="after" regex="false"><![CDATA[
+            protected function getForm() {
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $this->document->addStyle('view/javascript/codemirror/lib/codemirror.css');
+            $this->document->addStyle('view/javascript/codemirror/theme/monokai.css');
+            $this->document->addStyle('view/javascript/summernote/summernote.css');
+
+            $this->document->addScript('view/javascript/codemirror/lib/codemirror.js');
+            $this->document->addScript('view/javascript/codemirror/lib/xml.js');
+            $this->document->addScript('view/javascript/codemirror/lib/formatting.js');
+            $this->document->addScript('view/javascript/summernote/summernote.js');
+            $this->document->addScript('view/javascript/summernote/summernote-image-attributes.js');
+            $this->document->addScript('view/javascript/summernote/opencart.js');
+            ]]></add>
+        </operation>
+        <operation>
+            <search position="after" regex="false"><![CDATA[
+            $data['languages'] = $this->model_localisation_language->getLanguages();
+            ]]></search>
+            <add trim="true"><![CDATA[
+            if (isset($this->request->post['manufacturer_description'])) {
+    			$data['manufacturer_description'] = $this->request->post['manufacturer_description'];
+            } elseif (isset($this->request->get['manufacturer_id'])) {
+                $data['manufacturer_description'] = $this->model_catalog_manufacturer->getManufacturerDescriptions($this->request->get['manufacturer_id']);
+            } else {
+                $data['manufacturer_description'] = array();
+            }
+            ]]></add>
+        </operation>
+    </file>
+</modification>
