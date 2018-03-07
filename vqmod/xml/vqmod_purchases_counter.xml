@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+   <id>purchases counter</id>
+   <version>1.0</version>
+   <vqmver>2.X</vqmver>
+   <author>GHopper</author>
+   <file name="catalog/controller/common/cart.php">
+       <operation>
+            <search position="replace" regex="true"><![CDATA[
+            ~\$data\[\'text_items\'\].*~
+           ]]></search>
+           <add><![CDATA[
+    		$data['text_items'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0));
+           ]]></add>
+       </operation>
+   </file>
+   <file name="catalog/language/ru-ru/common/cart.php">
+       <operation>
+            <search position="replace" regex="true"><![CDATA[
+            ~\$_\[\'text_items\'\].*~
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $_['text_items'] = '%s';
+            ]]></add>
+       </operation>
+   </file>
+</modification>
