@@ -1,47 +1,46 @@
 <footer>
-    <div class="city_silhouette">gh<br /><br />
+    <div class="city_silhouette">
     </div>
   <div class="container">
     <div class="row">
-      {% if informations %}
+        <div class="col-sm-3">
+            <div id="logo"><a href="{{ home }}"><img src="/image/logo_footer.png" class="img-responsive" /></a></div>
+            <p>{{ powered }}</p>
+        </div>
+        <div class="col-sm-3">
+            <ul class="list-unstyled">
+                <li><a href="{{ contact }}">{{ text_contact }}</a></li>
+                <li><a href="{{ return }}">{{ text_return }}</a></li>
+                {% if informations %}
+                    {% for information in informations %}
+                    <li><a href="{{ information.href }}">{{ information.title }}</a></li>
+                    {% endfor %}
+                {% endif %}
+                <li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
+            </ul>
+        </div>
       <div class="col-sm-3">
-        <h5>{{ text_information }}</h5>
         <ul class="list-unstyled">
-         {% for information in informations %}
-          <li><a href="{{ information.href }}">{{ information.title }}</a></li>
-          {% endfor %}
+            <li><a href="tel: +74997532101"><i class="fa fa-phone"></i> +7 (499) 753-21-01</a></li>
+            <li class="last_in_group"><a href="tel: +79639615884"><i class="fa fa-phone"></i> +7 (963) 961-58-84</a></li>
+            <li class="last_in_group"><a href="mailto: vozduhi@bk.ru"><i class="fa fa-envelope"></i> vozduhi@bk.ru</a></li>
+            <li>ПН-ПТ 11:00-18:00</li>
+            <li>ПС-ВС 10:00-22:00</li>
         </ul>
       </div>
-      {% endif %}
       <div class="col-sm-3">
-        <h5>{{ text_service }}</h5>
-        <ul class="list-unstyled">
-          <li><a href="{{ contact }}">{{ text_contact }}</a></li>
-          <li><a href="{{ return }}">{{ text_return }}</a></li>
-          <li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
-        </ul>
-      </div>
-      <div class="col-sm-3">
-        <h5>{{ text_extra }}</h5>
-        <ul class="list-unstyled">
-          <li><a href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
-          <li><a href="{{ voucher }}">{{ text_voucher }}</a></li>
-          <li><a href="{{ affiliate }}">{{ text_affiliate }}</a></li>
-          <li><a href="{{ special }}">{{ text_special }}</a></li>
-        </ul>
-      </div>
-      <div class="col-sm-3">
-        <h5>{{ text_account }}</h5>
-        <ul class="list-unstyled">
-          <li><a href="{{ account }}">{{ text_account }}</a></li>
-          <li><a href="{{ order }}">{{ text_order }}</a></li>
-          <li><a href="{{ wishlist }}">{{ text_wishlist }}</a></li>
-          <li><a href="{{ newsletter }}">{{ text_newsletter }}</a></li>
-        </ul>
+            <div class="ft_icons_grp">
+                <a href=""><img src="/image/viber.png" alt=""></a>
+                <a href=""><img src="/image/whats_up.png" alt=""></a>
+                <a href=""><img src="/image/telegram.png" alt=""></a>
+            </div>
+            <div class="ft_icons_grp">
+                <a href=""><img src="/image/fb.png" alt=""></a>
+                <a href=""><img src="/image/vk.png" alt=""></a>
+                <a href=""><img src="/image/insta.png" alt=""></a>
+            </div>
       </div>
     </div>
-    <hr>
-    <p>{{ powered }}</p>
   </div>
 </footer>
 {% for script in scripts %}

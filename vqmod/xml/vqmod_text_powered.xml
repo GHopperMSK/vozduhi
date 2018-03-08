@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+   <id>Add manufcturer menu item</id>
+   <version>1.0</version>
+   <vqmver>2.X</vqmver>
+   <author>GHopper</author>
+   <file name="catalog/controller/common/menu.php">
+       <operation>
+            <search position="after" regex="false"><![CDATA[
+            $data['categories'] = array();
+           ]]></search>
+           <add><![CDATA[
+           $data['manufacturer'] = $this->url->link('product/manufacturer');
+           ]]></add>
+       </operation>
+   </file>
+   <file name="catalog/language/ru-ru/common/footer.php">
+       <operation>
+            <search position="replace" regex="true"><![CDATA[
+            ~\$_\[\'text_powered\'\].*~
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $_['text_powered'] = '© 2018 / Все права защищены';
+            ]]></add>
+       </operation>
+   </file>
+</modification>

@@ -349,15 +349,16 @@ div.required .control-label:before {
 footer {
     background-image: none;
     background-color: #000;
-	color: #fff;
+    color: #fff;
+    padding-bottom: 25px;
 }
 .city_silhouette {
-    height: 333px;
+    height: 20vw;
     background-image: url("/image/city_silhouette.png");
     background-position: center bottom;
     background-repeat: no-repeat;
     background-color: #fff;
-    background-size: 100%, 100%;
+    background-size: 100%;
 }
 footer hr {
 	border-top: none;
@@ -803,4 +804,20 @@ header .btn, .btn:hover {
     background-color: transparent;
     background-image: none;
     border: none;
+}
+
+.last_in_group {
+    margin-bottom: 10px;
+}
+
+.ft_icons_grp {
+    white-space: nowrap;
+
+}
+.ft_icons_grp img {
+    border: 1px solid #c9c9c9;
+    padding: 12px;
+    margin: 5px;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
 }
