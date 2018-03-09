@@ -59,4 +59,39 @@
             ]]></add>
         </operation>
     </file>
+    <file name="catalog/model/catalog/manufacturer.php">
+        <operation>
+            <search position="replace" regex="false"><![CDATA[
+            $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "manufacturer m LEFT JOIN " . DB_PREFIX . "manufacturer_to_store m2s ON (m.manufacturer_id = m2s.manufacturer_id) WHERE m.manufacturer_id = '" . (int)$manufacturer_id . "' AND m2s.store_id = '" . (int)$this->config->get('config_store_id') . "'");
+            ]]></search>
+            <add trim="false"><![CDATA[
+    		$query = $this->db->query("
+            SELECT * FROM " . DB_PREFIX . "manufacturer m
+            LEFT JOIN " . DB_PREFIX . "manufacturer_to_store m2s ON (m.manufacturer_id = m2s.manufacturer_id)
+            LEFT JOIN " . DB_PREFIX . "manufacturer_description md ON (m.manufacturer_id = md.manufacturer_id)
+            WHERE m.manufacturer_id = '" . (int)$manufacturer_id . "'
+                AND m2s.store_id = '" . (int)$this->config->get('config_store_id') . "'"
+            );
+            ]]></add>
+        </operation>
+    </file>
+    <file name="catalog/controller/product/manufacturer.php">
+        <operation>
+            <search position="after" regex="false"><![CDATA[
+            'name' => $result['name'],
+            ]]></search>
+            <add trim="true"><![CDATA[
+            'image' => $this->model_tool_image->resize($result['image'], 150, 150),
+            ]]></add>
+        </operation>
+        <operation>
+            <search position="after" regex="false"><![CDATA[
+            $data['heading_title'] = $manufacturer_info['name'];
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $data['heading_image'] = $image = $this->model_tool_image->resize($manufacturer_info['image'], 250, 250);
+			$data['heading_description'] = html_entity_decode($manufacturer_info['description']);
+            ]]></add>
+        </operation>
+    </file>
 </modification>
