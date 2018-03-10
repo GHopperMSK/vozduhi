@@ -868,3 +868,6 @@ a.thumbnail:hover, .thumbnail:hover {
     border-color: #191919;
     border: none;
 }
+.img-responsive {
+    width: 100%;
+}
