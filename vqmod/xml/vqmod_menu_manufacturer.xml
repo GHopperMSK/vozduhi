@@ -11,6 +11,7 @@
            ]]></search>
            <add><![CDATA[
            $data['manufacturer'] = $this->url->link('product/manufacturer');
+           $data['special'] = $this->url->link('product/special');
            ]]></add>
        </operation>
    </file>
