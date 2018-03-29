@@ -3,23 +3,25 @@
     </div>
   <div class="container">
     <div class="row">
-        <div class="col-sm-3">
-            <div id="logo"><a href="{{ home }}"><img src="/image/logo_footer.png" class="img-responsive" /></a></div>
-            <p>{{ powered }}</p>
+
+        <div class="col-md-3 hidden-sm hidden-xs">
+            <div id="logo">{% if logo %}<a href="{{ home }}"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-responsive" /></a>{% else %}
+                    <h1><a href="{{ home }}">{{ name }}</a></h1>
+                {% endif %}</div>
         </div>
-        <div class="col-sm-3">
+
+        <div class="col-md-3 col-sm-4 col-xs-12">
             <ul class="list-unstyled">
-                <li><a href="{{ contact }}">{{ text_contact }}</a></li>
-                <li><a href="{{ return }}">{{ text_return }}</a></li>
                 {% if informations %}
                     {% for information in informations %}
                     <li><a href="{{ information.href }}">{{ information.title }}</a></li>
                     {% endfor %}
                 {% endif %}
+                <li><a href="{{ return }}">{{ text_return }}</a></li>
                 <li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
             </ul>
         </div>
-      <div class="col-sm-3">
+      <div class="col-md-3 col-sm-4 col-xs-12">
         <ul class="list-unstyled">
             <li><a href="tel: +74997532101"><i class="fa fa-phone"></i> +7 (499) 753-21-01</a></li>
             <li class="last_in_group"><a href="tel: +79639615884"><i class="fa fa-phone"></i> +7 (963) 961-58-84</a></li>
@@ -28,16 +30,14 @@
             <li>ПС-ВС 10:00-22:00</li>
         </ul>
       </div>
-      <div class="col-sm-3">
-            <div class="icons_grp">
-                <a href=""><img src="/image/viber.png" alt=""></a>
-                <a href=""><img src="/image/whats_up.png" alt=""></a>
-                <a href=""><img src="/image/telegram.png" alt=""></a>
-            </div>
-            <div class="icons_grp">
-                <a href=""><img src="/image/fb.png" alt=""></a>
-                <a href=""><img src="/image/vk.png" alt=""></a>
-                <a href=""><img src="/image/insta.png" alt=""></a>
+      <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="footer_icons_grp">
+                <a href="https://api.whatsapp.com/send?phone=79639615884"><img src="/image/whats_up.png" alt=""></a>
+                <a href="tg://user?id=79639615884"><img src="/image/telegram.png" alt=""></a>
+                <a href="https://www.facebook.com/vozduhi.ru/"><img src="/image/fb.png" alt=""></a>
+                <a href="https://vk.com/club158086489"><img src="/image/vk.png" alt=""></a>
+                <a href="https://www.instagram.com/vozduhi/"><img src="/image/insta.png" alt=""></a>
+                <a href="viber://add?number=79639615884"><img src="/image/viber.png" alt=""></a>
             </div>
       </div>
     </div>

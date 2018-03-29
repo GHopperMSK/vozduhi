@@ -24,4 +24,24 @@
             ]]></add>
        </operation>
    </file>
+    <file name="catalog/language/ru-ru/common/cart.php">
+        <operation>
+            <search position="replace" regex="true"><![CDATA[
+            ~\$_\[\'text_items\'\].*~
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $_['text_items'] = '%s';
+            ]]></add>
+        </operation>
+    </file>
+    <file name="catalog/language/ru-ru/checkout/cart.php">
+        <operation>
+            <search position="replace" regex="true"><![CDATA[
+            ~\$_\[\'text_items\'\].*~
+            ]]></search>
+            <add trim="true"><![CDATA[
+            $_['text_items'] = '%s';
+            ]]></add>
+        </operation>
+    </file>
 </modification>

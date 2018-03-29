@@ -218,7 +218,13 @@ var cart = {
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
-					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+                    if (json['total'] > 9) {
+                        $('#cart-total').css('left', '14px');
+                    } else {
+                        $('#cart-total').css('left', '20px');
+                    }
+
+                    $('#cart-total').text(json['total']);
 				}, 100);
 
 				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {

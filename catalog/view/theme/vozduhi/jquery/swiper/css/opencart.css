@@ -10,6 +10,7 @@
 /* OpenCart Code */
 .swiper-container {
 	direction: ltr !important;
+	margin: 50px 0 100px 0;
 }
 .swiper-pager {
 	width: 100%;
