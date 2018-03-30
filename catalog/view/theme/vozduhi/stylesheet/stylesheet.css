@@ -453,6 +453,23 @@ footer h5 {
 .pagination {
 	margin: 0;
 }
+.pagination>li>a, .pagination>li>span {
+	color: #666;
+}
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
+	z-index: 2;
+	color: #fff;
+	cursor: default;
+	color: #fff;
+	background-color: #666;
+	background-image: none;
+	border: none;
+}
 /* buttons */
 .buttons {
 	margin: 1em 0;
@@ -486,25 +503,25 @@ footer h5 {
 .btn-group > .btn-lg {
 	font-size: 15px;
 }
-.btn-default {
-	color: #777;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-	background-color: #e7e7e7;
-	background-image: linear-gradient(to bottom, #eeeeee, #dddddd);
-	background-repeat: repeat-x;
-	border-color: #dddddd #dddddd #b3b3b3 #b7b7b7;
+
+.btn-default, .btn-primary {
+	color: #fff;
+	background-color: #191919;
+	background-image: none;
+	border: none;
 }
-.btn-primary {
-	color: #ffffff;
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-	background-color: #229ac8;
-	background-image: linear-gradient(to bottom, #23a1d1, #1f90bb);
-	background-repeat: repeat-x;
-	border-color: #1f90bb #1f90bb #145e7a;
-}
-.btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
-	background-color: #1f90bb;
-	background-position: 0 -15px;
+.btn-default:hover,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:active.focus
+.btn-primary.disabled,
+.btn-primary[disabled] {
+	color: #fff;
+	background-color: #666;
+	background-image: none;
+	border: none;
+	outline: none;
 }
 .btn-warning {
 	color: #ffffff;

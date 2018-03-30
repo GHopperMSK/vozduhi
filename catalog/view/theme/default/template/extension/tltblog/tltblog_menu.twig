@@ -1,0 +1,13 @@
+{% if tltblog_menu.enabled %}
+  <li class="dropdown"><a href="{{ tltblog_menu.blog_href }}" class="dropdown-toggle" data-toggle="dropdown">{{ tltblog_menu.blog_title }}</a>
+    <div class="dropdown-menu">
+      <div class="dropdown-inner">
+        <ul class="list-unstyled">
+          {% for tag in tltblog_menu.tags %}
+            <li><a href="{{ tag.href }}">{{ tag.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </li>
+{% endif %}
