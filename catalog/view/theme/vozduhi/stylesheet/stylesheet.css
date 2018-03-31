@@ -225,8 +225,10 @@ div.required .control-label:before {
 #cart-total {
     position: absolute;
     top: 25px;
-    left: 20px;
+    left: 0;
     font-size: 20px;
+    width: 50px;
+    text-align: center;
 }
 /* menu */
 #menu {
@@ -678,9 +680,6 @@ footer h5 {
 .product-grid .caption {
     text-align: center;
 }
-.product-list .product-thumb .caption {
-	margin-left: 230px;
-}
 @media (max-width: 1200px) {
 .product-grid .product-thumb .caption {
 	min-height: 0;
@@ -895,11 +894,17 @@ header .btn, header .btn:hover {
 }
 #input-quantity {
     display: inline-block;
-    width: 50%;
+    width: 100%;
 }
-#wishlist-icon {
+#wishlist-icon .fa {
     float: right;
     cursor: pointer;
+    font-size: 32px;
+    color: #191919;
+    margin-left: 20px;
+}
+#wishlist-icon .fa:hover {
+    color: #666;
 }
 #product {
     width: 70%;
@@ -941,14 +946,12 @@ a.thumbnail:hover, .thumbnail:hover {
     background-color: #191919;
     background-image: none;
     border-color: #191919;
-    border: none;
 }
 .black-link button:hover, .black-link button:active, .black-link button:focus, .btn-primary.disabled, .btn-primary[disabled] {
 	color: #fff;
 	background-color: #666;
 	background-image: none;
 	border-color: #191919;
-	border: none;
 }
 .img-responsive {
     width: 100%;
@@ -995,4 +998,36 @@ a.thumbnail:hover, .thumbnail:hover {
 a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
     border-color: #dbdbdb;
     outline: none;
+}
+
+#product .input-group-btn > .btn,
+#product .input-group-btn > .btn:focus,
+#product .input-group-btn > .btn:active
+{
+    background-color: #191919;
+    border: 1px solid #191919;
+    outline: none;
+}
+#product .input-group-btn > .btn:hover
+{
+    background-color: #666;
+    border: 1px solid #666;
+    outline: none;
+}
+#product .input-group-btn .fa-plus, #product .input-group-btn .fa-minus {
+    font-size: 12px;
+}
+.btn {
+    box-shadow: none;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.form-control:focus {
+    border-color: #666;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }

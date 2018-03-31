@@ -218,12 +218,6 @@ var cart = {
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
-                    if (json['total'] > 9) {
-                        $('#cart-total').css('left', '14px');
-                    } else {
-                        $('#cart-total').css('left', '20px');
-                    }
-
                     $('#cart-total').text(json['total']);
 				}, 100);
 
