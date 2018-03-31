@@ -106,7 +106,7 @@
             </div>
             {% endif %}</div>
         </div>
-        <div class="col-sm-6 black-link">
+        <div class="col-sm-6">
           <h1>{{ heading_title }}</h1>
           <ul class="list-unstyled">
             {% if manufacturer %}
@@ -258,8 +258,22 @@
             </div>
             {% endif %}
             <div class="form-group">
-              <input type="text" name="quantity" value="{{ minimum }}" size="2" id="input-quantity" class="form-control" />
-              <span id="wishlist-icon" onclick="wishlist.add('{{ product.product_id }}');"><i style="float: right;" class="fa fa-heart"></i></span>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button onclick="var amt = parseInt($('#input-quantity').get(0).value); amt>1?$('#input-quantity').get(0).value=amt-1:1;" class="btn btn-secondary" type="button">
+                            <i class="fa fa-minus" aria-hidden="true"></i>
+                        </button>
+                    </span>
+                    <input type="number" name="quantity" value="{{ minimum }}" size="2" id="input-quantity" class="form-control" />
+                    <span class="input-group-btn">
+                        <button onclick="$('#input-quantity').get(0).value = parseInt($('#input-quantity').get(0).value) + 1;" class="btn btn-secondary" type="button">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </button>
+                    </span>
+                    <span id="wishlist-icon" onclick="wishlist.add('{{ product_id }}');">
+                        <i class="fa fa-heart"></i>
+                    </span>
+                </div>
             </div>
             <div class="form-group">
               <input type="hidden" name="product_id" value="{{ product_id }}" />
@@ -355,7 +369,7 @@ $('#button-cart').on('click', function() {
 	$.ajax({
 		url: 'index.php?route=checkout/cart/add',
 		type: 'post',
-		data: $('#product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
+		data: $('#product input[type=\'text\'], #product input[type=\'number\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea'),
 		dataType: 'json',
 		beforeSend: function() {
 			$('#button-cart').button('loading');
@@ -390,12 +404,6 @@ $('#button-cart').on('click', function() {
 
 			if (json['success']) {
 				$('.breadcrumb').after('<div class="alert alert-success alert-dismissible">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
-
-                if (json['total'] > 9) {
-                    $('#cart-total').css('left', '14px');
-                } else {
-                    $('#cart-total').css('left', '20px');
-                }
 
 				$('#cart-total').text(json['total']);
 

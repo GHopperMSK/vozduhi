@@ -62,7 +62,12 @@ class ControllerCheckoutShippingMethod extends Controller {
 		} else {
 			$data['comment'] = '';
 		}
-		
+
+		// if free shipping enabled, turn off flat method
+		if (isset($data['shipping_methods']['free'])) {
+		    unset($data['shipping_methods']['flat']);
+        }
+
 		$this->response->setOutput($this->load->view('checkout/shipping_method', $data));
 	}
 
