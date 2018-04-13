@@ -96,3 +96,6 @@
     cursor: pointer;
     pointer-events: auto;
 }
+.swiper-slide img {
+	width: 100%;
+}
