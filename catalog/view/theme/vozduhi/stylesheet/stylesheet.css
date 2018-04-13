@@ -147,9 +147,10 @@ div.required .control-label:before {
     margin-top: -14px;
     border: none;
     -webkit-border-radius: 0;
-    background-color: transparent;
+    background-color: white;
     border-radius: 0;
 	border-bottom: 1px solid #7f7f7f;
+    margin-bottom: 1px;
 }
 #search .btn {
     padding: 0 10px;
@@ -166,6 +167,9 @@ div.required .control-label:before {
 }
 #search .input-group-btn {
     border: none;
+}
+#search .input-group-btn i {
+    color: #191919;
 }
 #search .form-control {
     border: none;
@@ -678,7 +682,8 @@ footer h5 {
 	display: none;
 }
 .product-list .product-thumb h4 {
-    height: 20px;
+    height: auto;
+    margin-bottom: 15px;
 }
 @media (min-width: 767px) {
 .product-list .product-thumb .image {
@@ -1032,8 +1037,31 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-box-shadow: none;
     box-shadow: none;
 }
-
 .btn.active, .btn:active, .btn-group.open .dropdown-toggle {
     -webkit-box-shadow: none;
     box-shadow: none;
+}
+#list-view,
+#grid-view {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    color: #191919;
+}
+#list-view:hover,
+#grid-view:hover,
+#list-view:focus,
+#grid-view:focus,
+#grid-view:active,
+#list-view:active,
+#grid-view.active,
+#list-view.active,
+#list-view.active.focus,
+#list-view.active:focus,
+#grid-view.active.focus,
+#grid-view.active:focus {
+    color: #fff;
+    background-color: #666;
+}
+.dropdown-menu {
+    min-width: 270px;
 }
