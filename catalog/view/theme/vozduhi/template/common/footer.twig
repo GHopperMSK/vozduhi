@@ -43,6 +43,44 @@
     </div>
   </div>
 </footer>
+<script>
+    $(document).ready(function () {
+        var $menu = $('#menu');
+
+        var oldBtn = null;
+        $('.ochow-menu-item-toggle').on('click', function () {
+            var $btn = $(this);
+
+            $menu
+                .find('.dropdown')
+                .removeClass('open')
+                .find('.ochow-open')
+                .removeClass('ochow-open')
+                .addClass('ochow-close');
+
+            if ($btn.hasClass('ochow-close')) {
+                if (oldBtn === this) {
+                    oldBtn = null;
+                    return true;
+                }
+
+                $btn
+                    .removeClass('ochow-close')
+                    .addClass('ochow-open')
+                    .parent()
+                    .addClass('open')
+            } else {
+                $btn
+                    .removeClass('ochow-open')
+                    .addClass('ochow-close')
+                    .parent()
+                    .removeClass('open')
+            }
+
+            oldBtn = this;
+        });
+    });
+</script>
 {% for script in scripts %}
 <script src="{{ script }}" type="text/javascript"></script>
 {% endfor %}

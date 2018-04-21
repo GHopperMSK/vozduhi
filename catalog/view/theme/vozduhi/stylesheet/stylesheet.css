@@ -95,8 +95,7 @@ div.required .control-label:before {
 	text-decoration: none;
 	color: #000;
 	background-color: #888;
-	background-image: none; /*linear-gradient(to bottom, #23a1d1, #888);
-	background-repeat: repeat-x;*/
+	background-image: none;
 }
 /* top */
 #top {
@@ -269,7 +268,6 @@ div.required .control-label:before {
     text-transform: none;
 }
 #menu .nav > li > a {
-	color: #000;
 	padding: 10px;
 	min-height: 15px;
 	background-color: transparent;
@@ -301,29 +299,11 @@ div.required .control-label:before {
 	padding: 3px 20px;
 	clear: both;
 	line-height: 20px;
-	color: #333333;
 	font-size: 12px;
 	font-family: Roboto-Medium_3, sans-serif;
 }
 #menu .dropdown-inner li a:hover {
 	color: #FFFFFF;
-}
-#menu .see-all {
-	display: block;
-	margin-top: 0.5em;
-	border-top: 1px solid #DDD;
-	padding: 3px 20px;
-	-webkit-border-radius: 0 0 4px 4px;
-	-moz-border-radius: 0 0 4px 4px;
-	border-radius: 0 0 3px 3px;
-	font-size: 12px;
-}
-#menu .see-all:hover, #menu .see-all:focus {
-	text-decoration: none;
-	color: #ffffff;
-	background-color: #888;
-	background-image: none; /* linear-gradient(to bottom, #23a1d1, #1f90bb);
-	background-repeat: repeat-x;*/
 }
 #menu #category {
 	float: left;
@@ -370,17 +350,43 @@ div.required .control-label:before {
 	}
 	#menu .dropdown-inner a {
 		width: 100%;
-		color: #888;
 	}
-	#menu .dropdown-menu a:hover,
-	#menu .dropdown-menu ul li a:hover {
-		background: rgba(0, 0, 0, 0.1);
-	}
-	#menu .see-all {
-		margin-top: 0;
-		border: none;
-		border-radius: 0;
-		color: #888;
+}
+#menu .dropdown .dropdown-toggle {
+	padding-right: 20px;
+}
+.ochow-menu-item-toggle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+	padding: 10px 15px;
+}
+.ochow-menu-item-toggle:hover {
+	background-color: rgba(144, 128, 128, 0.5);
+	cursor: pointer;
+}
+.ochow-menu-item-toggle.ochow-close .fa-plus {
+	display: inline-block;
+}
+.ochow-menu-item-toggle.ochow-close .fa-minus {
+	display: none;
+}
+.ochow-menu-item-toggle.ochow-open .fa-plus {
+	display: none;
+}
+.ochow-menu-item-toggle.ochow-open .fa-minus {
+	display: inline-block;
+}
+.ochow-menu-item-arrow {
+	position: absolute;
+	top: 7px;
+	right: 5px;
+}
+
+@media (max-width: 768px) {
+	#menu .navbar-nav > li {
+		display: block !important;
 	}
 }
 /* content */
@@ -432,7 +438,7 @@ footer hr {
 	border-top: none;
 	border-bottom: 1px solid #666;
 }
-footer a {
+footer a, footer li {
 	color: #ccc;
 }
 footer a:hover {
@@ -1084,4 +1090,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .dropdown-menu {
     min-width: 270px;
+}
+a:hover {
+	color: #444;
 }
